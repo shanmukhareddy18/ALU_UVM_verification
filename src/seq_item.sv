@@ -26,13 +26,13 @@ class seq_item extends uvm_sequence_item;
  constraint c1{
    CE dist {0:=1, 1:=100};
  }
-  constraint c2{
+/*  constraint c2{
  if(MODE==1)
    CMD inside {[0:10]};
  }
  constraint c3{
  if(MODE==0)
   CMD inside {[0:13]};
-}
+}*/
 
 endclass

@@ -89,10 +89,10 @@ if(tr.CE) begin
  if(tr.INP_VALID==2'b11)
   begin A=tr.OPA; B=tr.OPB;end
 
- if(count==16)
+/* if(count==16)
   begin err=1; count=0;  end
  else
-  err=0;
+  err=0;*/
 
 
 if(tr.CE)
@@ -243,6 +243,11 @@ if(tr.CE)
           endcase
        end
  end
+  if(count==16)
+  begin err=1; count=0;  end
+ else
+  err=0;
+
  tr.RES=res;
     tr.COUT=cout;
    tr.G=G;

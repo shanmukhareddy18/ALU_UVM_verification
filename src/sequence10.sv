@@ -309,3 +309,35 @@ task body();
 endtask
 endclass
 
+class sequence13 extends uvm_sequence#(seq_item);
+ `uvm_object_utils(sequence13)
+ function new(string name="sequence13");
+  super.new(name);
+ endfunction
+ task body();
+ repeat(5)
+ begin
+   req=seq_item::type_id::create("req");
+   start_item(req);
+   assert(req.randomize() with {CE==1 ; CMD>13;  } );
+   finish_item(req);
+ end
+ endtask
+endclass
+
+class sequence14 extends uvm_sequence#(seq_item);
+ `uvm_object_utils(sequence14)
+ function new(string name="sequence14");
+  super.new(name);
+ endfunction
+ task body();
+ repeat(5)
+ begin
+   req=seq_item::type_id::create("req");
+   start_item(req);
+   assert(req.randomize() with {CE==1 ;MODE==1; CMD==8; OPA==OPB;  } );
+   finish_item(req);
+ end
+ endtask
+endclass
+

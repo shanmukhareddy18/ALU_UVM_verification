@@ -11,6 +11,7 @@ package alu_pkg;
  `include "agent_active.sv"
  `include "agent_passive.sv"
  `include "scoreboard.sv"
+ `include "subscriber.sv"
  `include "env.sv"
  `include "test.sv"
  
