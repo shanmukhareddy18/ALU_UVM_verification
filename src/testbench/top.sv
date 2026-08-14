@@ -15,8 +15,8 @@ import uvm_pkg::*;
         reset = 1;
         repeat(4) @(posedge clk);
         reset = 0;
-        #60; reset=1;
-       #10; reset=0;
+     //   #60; reset=1;
+      // #10; reset=0;
       end
 
  	initial

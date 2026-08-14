@@ -17,7 +17,7 @@ endfunction
 task run_phase(uvm_phase phase);
 begin
 
-	 repeat(5)  @(vif.out_mon_cb);
+	 repeat(4)  @(vif.out_mon_cb);
  tr=seq_item::type_id::create("tr");
  forever begin
 	  @(vif.out_mon_cb);

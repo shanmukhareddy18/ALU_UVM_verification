@@ -97,16 +97,16 @@ if(tr.CE) begin
 
 if(tr.CE)
    begin
-   E=0;G=0;L=0;
    if(tr.CMD==9 || tr.CMD==10 && tr.MODE==1)
      res=temp_res;
- /*   tr.RES=res;
+   tr.RES=res;
     tr.COUT=cout;
    tr.G=G;
    tr.E=E;
     tr.L=L;
     tr.OFLOW=oflow;
-    tr.ERR=err;*/
+    tr.ERR=err;
+    E=0;G=0;L=0;cout=0;oflow=0;err=0;
     if(tr.MODE)
     begin
       	case(tr.CMD)             
@@ -115,7 +115,7 @@ if(tr.CE)
 	      			cout=res[8]?1:0;
             	end
     	 4'b0001 :if(first_valid && second_valid ) begin 
-             cout=(A<B)?1:0;
+             oflow=(A<B)?1:0;
              res=A-B;
             end
     	 4'b0010:            
@@ -248,13 +248,13 @@ if(tr.CE)
  else
   err=0;
 
- tr.RES=res;
+ /*tr.RES=res;
     tr.COUT=cout;
    tr.G=G;
    tr.E=E;
     tr.L=L;
     tr.OFLOW=oflow;
-    tr.ERR=err;
+    tr.ERR=err;*/
 
 `uvm_info("SCB",$sformatf("EXP: RES=%0d COUT=%0b OFLOW=%0b G=%0b E=%0b L=%0b ERR=%0b count_cycles=%d",
           tr.RES, tr.COUT, tr.OFLOW,

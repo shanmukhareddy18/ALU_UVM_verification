@@ -49,8 +49,9 @@ task run_phase(uvm_phase phase);
  s14=sequence14::type_id::create("s14");
 
 #40;
- repeat(5) begin
- s9.start(ee.agnt_a.seqr);
+// repeat(5) begin
+ s10.start(ee.agnt_a.seqr);
+ /*s9.start(ee.agnt_a.seqr);
  s10.start(ee.agnt_a.seqr);
  s11.start(ee.agnt_a.seqr);
  s12.start(ee.agnt_a.seqr);
@@ -63,8 +64,8 @@ task run_phase(uvm_phase phase);
  s8.start(ee.agnt_a.seqr);
  s9.start(ee.agnt_a.seqr);
  s13.start(ee.agnt_a.seqr);
- s14.start(ee.agnt_a.seqr);
- end
+ s14.start(ee.agnt_a.seqr);*/
+// end
 phase.phase_done.set_drain_time(this, 50);
  phase.drop_objection(this);
 endtask

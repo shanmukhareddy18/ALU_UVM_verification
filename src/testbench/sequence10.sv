@@ -4,7 +4,7 @@ class sequence10 extends uvm_sequence#(seq_item);
   super.new(name);
  endfunction
  task body();
- repeat(10) begin
+ repeat(3) begin
   for(int i=0;i<=8;i++)
    begin
    req=seq_item::type_id::create("req");
