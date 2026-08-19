@@ -42,6 +42,7 @@ bit [1:0]inp_v;
 bit [7:0] A,B;
 bit [15:0]res;
 bit [15:0]temp_res;
+bit [15:0]mul_res;
 bit err;
 bit G,L,E,cout,oflow;
 bit first_valid;
@@ -164,12 +165,14 @@ if(tr.CE)
              end
            end
 
-	4'b1001: if(first_valid && second_valid ) begin   
-                    temp_res =(A+1) * (B +1);
-                  end
-	4'b1010: if(first_valid && second_valid ) begin   
-                    temp_res =(A << 1) * (B); 
-                  end
+	4'b1001: begin temp_res=mul_res;
+                    if(first_valid && second_valid ) begin   
+                    mul_res =(A+1) * (B +1);
+                  end end
+	4'b1010:  begin temp_res=mul_res;
+		  if(first_valid && second_valid ) begin   
+                    mul_res =(A << 1) * (B); 
+                  end end
 
 	default:   
             begin
